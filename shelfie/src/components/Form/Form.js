@@ -5,31 +5,47 @@ class Form extends Component {
         super()
         this.state = {
             name: '',
-            price: 0,
-            imageURL: 0
+            price: undefined,
+            imageURL: undefined
         }
     }
 
-    handleNameChange =()=>{
-
+    handleNameChange = value => {
+        this.setState({
+            name: value
+        })
     }
 
-    handlePriceChange =()=>{
-
+    handlePriceChange = value => {
+        this.setState({
+            price: value
+        })
     }
 
-    handImageUrlChange =()=>{
-
+    handleImageUrlChange = value => {
+        this.setState({
+            imageURL: value
+        })
     }
+
+    handleCancelClick = () => {
+        this.setState({
+            name: '',
+            price: undefined,
+            imageURL: undefined
+        })
+    }
+
+
 
     render(){
         return(
             <div>
                 <h1>Form</h1>
-                <input onChange={e=>{this.handleNameChange(e.target.value)}} type="text"/>
-                <input onChange={e=>{this.handlePriceChange(e.target.value)}} type="text"/>
-                <input onChange={e=>{this.handleImageUrlChange(e.target.value)}} type="text"/>
-                <button>Cancel</button>
+                <input onChange = {e=>{this.handleNameChange(e.target.value)}} type="text"/>
+                <input onChange = {e=>{this.handlePriceChange(e.target.value)}} type="text"/>
+                <input onChange = {e=>{this.handleImageUrlChange(e.target.value)}} type="text"/>
+                <button onClick = {this.handleCancelClick}>Cancel</button>
                 <button>Add to inventory</button>
             </div>
         )

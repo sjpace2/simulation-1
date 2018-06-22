@@ -8,10 +8,16 @@ class Dashboard extends Component {
     }
 
     render(){
+        let displayedList = this.props.list.map((product, index) => {
+            return <Product key={index} value={product} name={product.name} price={product.price} image={product.img}/>
+        })
+        
         return(
             <div>
                 Dashboard
                 <Product/>
+                {displayedList}
+                
             </div>
         )
     }
