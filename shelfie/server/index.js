@@ -15,6 +15,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance=>{
 }).catch(err=>console.log(err))
 
 
+app.get('/api/inventory', controller.get)
 
 
 const port = process.env.PORT || 3000;
