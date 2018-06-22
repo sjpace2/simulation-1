@@ -1,5 +1,13 @@
 module.exports = {
     get: (req, res) => {
-        res.status(200).send('it worked!')
+        const dbInstance = req.app.get('db');
+        
+
+        req.app.get('db').get_inventory()
+        .then( products => res.send(products) )
+        .catch(err=>{
+            res.status(500).send('oops! something went wrong')
+        })
     }
 }
+

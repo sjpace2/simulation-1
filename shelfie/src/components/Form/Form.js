@@ -8,6 +8,8 @@ class Form extends Component {
             price: undefined,
             imageURL: undefined
         }
+
+
     }
 
     handleNameChange = value => {
