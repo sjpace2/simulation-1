@@ -33,8 +33,8 @@ class Form extends Component {
     handleCancelClick = () => {
         this.setState({
             name: '',
-            price: undefined,
-            imageURL: undefined
+            price: '',
+            imageURL: ''
         })
     }
 
@@ -44,9 +44,9 @@ class Form extends Component {
         return(
             <div>
                 <h1>Form</h1>
-                <input onChange = {e=>{this.handleNameChange(e.target.value)}} type="text"/>
-                <input onChange = {e=>{this.handlePriceChange(e.target.value)}} type="text"/>
-                <input onChange = {e=>{this.handleImageUrlChange(e.target.value)}} type="text"/>
+                <input value={this.state.name} onChange = {e=>{this.handleNameChange(e.target.value)}} type="text"/>
+                <input value={this.state.price} onChange = {e=>{this.handlePriceChange(e.target.value)}} type="text"/>
+                <input value={this.state.imageURL} onChange = {e=>{this.handleImageUrlChange(e.target.value)}} type="text"/>
                 <button onClick = {this.handleCancelClick}>Cancel</button>
                 <button>Add to inventory</button>
             </div>
