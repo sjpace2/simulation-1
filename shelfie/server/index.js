@@ -16,6 +16,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance=>{
 
 
 app.get('/api/inventory', controller.get)
+app.post('/api/product', controller.create)
 
 
 const port = process.env.PORT || 3005;
