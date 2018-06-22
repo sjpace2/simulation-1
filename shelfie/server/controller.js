@@ -26,7 +26,7 @@ module.exports = {
         const dbInstance = req.app.get('db');
         const {id} = req.params;
 
-        dbInstance.delete_product(id)
+        dbInstance.delete_product(name)
         .then(()=> res.status(200).send(response) )
     }
 }

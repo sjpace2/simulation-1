@@ -7,8 +7,8 @@ class Dashboard extends Component {
         super()
     }
 
-    deleteRequest = (id) => {
-        axios.delete(`/api/product/${id}`).then(response => {
+    deleteRequest = (name) => {
+        axios.delete(`/api/product/${name}`).then(response => {
             this.props.get()
         })
     }
