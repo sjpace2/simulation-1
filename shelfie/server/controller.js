@@ -15,11 +15,19 @@ module.exports = {
         const {name, price, imageURL} = req.body;
         
         dbInstance.create_product([name, price, imageURL]).then((products)=>{
-            res.status(200).send(products.push[req.body]).catch(err=>{
-                res.status(500).send('oops! something went wrong')
-            })
+            res.status(200).send(products.push[req.body])
+        }).catch(err=>{
+            res.status(500).send('oops! something went wrong')
         })
 
+    },
+
+    delete: (req, res) => {
+        const dbInstance = req.app.get('db');
+        const {id} = req.params;
+
+        dbInstance.delete_product(id)
+        .then(()=> res.status(200).send(response) )
     }
 }
 

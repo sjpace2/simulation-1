@@ -16,14 +16,15 @@ class App extends Component {
       inventory: []
     }
   }
-
+//pass getproducts to form
+  
   getProducts = () => {
     axios.get('/api/inventory').then(response => {
       this.setState({inventory: response.data})
       
       console.log(this.state.inventory)
-    })
 
+    })
    
   }
 
@@ -34,8 +35,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Dashboard list={this.state.inventory}/>
-        <Form/>
+        <Dashboard get={this.getProducts} list = {this.state.inventory}/>
+        <Form get={this.getProducts}/>
         <Header/>
       </div>
     );
